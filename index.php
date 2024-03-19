@@ -1,16 +1,64 @@
-<?php
 
-define( 'DVWA_WEB_PAGE_TO_ROOT', '' );
-require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
+<!DOCTYPE html>
 
-dvwaPageStartup( array( 'authenticated' ) );
+<html lang="en-GB">
 
-$page = dvwaPageNewGrab();
-$page[ 'title' ]   = 'Welcome' . $page[ 'title_separator' ].$page[ 'title' ];
-$page[ 'page_id' ] = 'home';
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-$page[ 'body' ] .= "
-<div class=\"body_padded\">
+		<title>Welcome :: Damn Vulnerable Web Application (DVWA)</title>
+
+		<link rel="stylesheet" type="text/css" href="dvwa/css/main.css" />
+
+		<link rel="icon" type="\image/ico" href="favicon.ico" />
+
+		<script type="text/javascript" src="dvwa/js/dvwaPage.js"></script>
+
+	</head>
+
+	<body class="home">
+		<div id="container">
+
+			<div id="header">
+
+				<img src="dvwa/images/logo.png" alt="Damn Vulnerable Web Application" />
+
+			</div>
+
+			<div id="main_menu">
+
+				<div id="main_menu_padded">
+				<ul class="menuBlocks"><li class="selected"><a href=".">Home</a></li>
+<li class=""><a href="instructions.php">Instructions</a></li>
+<li class=""><a href="setup.php">Setup / Reset DB</a></li>
+</ul><ul class="menuBlocks"><li class=""><a href="vulnerabilities/brute/">Brute Force</a></li>
+<li class=""><a href="vulnerabilities/exec/">Command Injection</a></li>
+<li class=""><a href="vulnerabilities/csrf/">CSRF</a></li>
+<li class=""><a href="vulnerabilities/fi/.?page=include.php">File Inclusion</a></li>
+<li class=""><a href="vulnerabilities/upload/">File Upload</a></li>
+<li class=""><a href="vulnerabilities/captcha/">Insecure CAPTCHA</a></li>
+<li class=""><a href="vulnerabilities/sqli/">SQL Injection</a></li>
+<li class=""><a href="vulnerabilities/sqli_blind/">SQL Injection (Blind)</a></li>
+<li class=""><a href="vulnerabilities/weak_id/">Weak Session IDs</a></li>
+<li class=""><a href="vulnerabilities/xss_d/">XSS (DOM)</a></li>
+<li class=""><a href="vulnerabilities/xss_r/">XSS (Reflected)</a></li>
+<li class=""><a href="vulnerabilities/xss_s/">XSS (Stored)</a></li>
+<li class=""><a href="vulnerabilities/csp/">CSP Bypass</a></li>
+<li class=""><a href="vulnerabilities/javascript/">JavaScript</a></li>
+<li class=""><a href="vulnerabilities/open_redirect/">Open HTTP Redirect</a></li>
+</ul><ul class="menuBlocks"><li class=""><a href="security.php">DVWA Security</a></li>
+<li class=""><a href="phpinfo.php">PHP Info</a></li>
+<li class=""><a href="about.php">About</a></li>
+</ul><ul class="menuBlocks"><li class=""><a href="logout.php">Logout</a></li>
+</ul>
+				</div>
+
+			</div>
+
+			<div id="main_body">
+
+				
+<div class="body_padded">
 	<h1>Welcome to Damn Vulnerable Web Application!</h1>
 	<p>Damn Vulnerable Web Application (DVWA) is a PHP/MySQL web application that is damn vulnerable. Its main goal is to be an aid for security professionals to test their skills and tools in a legal environment, help web developers better understand the processes of securing web applications and to aid both students & teachers to learn about web application security in a controlled class room environment.</p>
 	<p>The aim of DVWA is to <em>practice some of the most common web vulnerabilities</em>, with <em>various levels of difficultly</em>, with a simple straightforward interface.</p>
@@ -25,7 +73,7 @@ $page[ 'body' ] .= "
 	<br />
 
 	<h2>WARNING!</h2>
-	<p>Damn Vulnerable Web Application is damn vulnerable! <em>Do not upload it to your hosting provider's public html folder or any Internet facing servers</em>, as they will be compromised. It is recommend using a virtual machine (such as " . dvwaExternalLinkUrlGet( 'https://www.virtualbox.org/','VirtualBox' ) . " or " . dvwaExternalLinkUrlGet( 'https://www.vmware.com/','VMware' ) . "), which is set to NAT networking mode. Inside a guest machine, you can download and install " . dvwaExternalLinkUrlGet( 'https://www.apachefriends.org/','XAMPP' ) . " for the web server and database.</p>
+	<p>Damn Vulnerable Web Application is damn vulnerable! <em>Do not upload it to your hosting provider's public html folder or any Internet facing servers</em>, as they will be compromised. It is recommend using a virtual machine (such as <a href="https://www.virtualbox.org/" target="_blank">VirtualBox</a> or <a href="https://www.vmware.com/" target="_blank">VMware</a>), which is set to NAT networking mode. Inside a guest machine, you can download and install <a href="https://www.apachefriends.org/" target="_blank">XAMPP</a> for the web server and database.</p>
 	<br />
 	<h3>Disclaimer</h3>
 	<p>We do not take responsibility for the way in which any one uses this application (DVWA). We have made the purposes of the application clear and it should not be used maliciously. We have given warnings and taken measures to prevent users from installing DVWA on to live web servers. If your web server is compromised via an installation of DVWA it is not our responsibility it is the responsibility of the person/s who uploaded and installed it.</p>
@@ -35,13 +83,33 @@ $page[ 'body' ] .= "
 	<h2>More Training Resources</h2>
 	<p>DVWA aims to cover the most commonly seen vulnerabilities found in today's web applications. However there are plenty of other issues with web applications. Should you wish to explore any additional attack vectors, or want more difficult challenges, you may wish to look into the following other projects:</p>
 	<ul>
-		<li>" . dvwaExternalLinkUrlGet( 'https://github.com/webpwnized/mutillidae', 'Mutillidae') . "</li>
-		<li>" . dvwaExternalLinkUrlGet( 'https://owasp.org/www-project-vulnerable-web-applications-directory', 'OWASP Vulnerable Web Applications Directory') . "</li>
+		<li><a href="https://github.com/webpwnized/mutillidae" target="_blank">Mutillidae</a></li>
+		<li><a href="https://owasp.org/www-project-vulnerable-web-applications-directory" target="_blank">OWASP Vulnerable Web Applications Directory</a></li>
 	</ul>
 	<hr />
 	<br />
-</div>";
+</div>
+				<br /><br />
+				
 
-dvwaHtmlEcho( $page );
+			</div>
 
-?>
+			<div class="clear">
+			</div>
+
+			<div id="system_info">
+				<div align="left"><em>Username:</em> Unknown<br /><em>Security Level:</em> low<br /><em>Locale:</em> en<br /><em>SQLi DB:</em> mysql</div>
+			</div>
+
+			<div id="footer">
+
+				<p>Damn Vulnerable Web Application (DVWA)</p>
+				<script src='dvwa/js/add_event_listeners.js'></script>
+
+			</div>
+
+		</div>
+
+	</body>
+
+</html>
